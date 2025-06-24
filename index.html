@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phan Hong Dat - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap');
+        body {
+            font-family: 'Times New Roman', serif;
+        }
+        .harvard-style {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        @media print {
+            .harvard-style {
+                box-shadow: none;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <!-- Export to PDF Button -->
+    <div class="max-w-4xl mx-auto mb-4 no-print">
+        <button onclick="exportToPDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            📄 Export to PDF
+        </button>
+        <button onclick="window.print()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105 ml-2">
+            🖨️ Print Resume
+        </button>
+    </div>
+    
+    <div id="resume-content" class="harvard-style p-8">
+        <!-- Header with name and contact information -->
+        <header class="text-center border-b-2 border-black pb-4 mb-6">
+            <h1 class="text-3xl font-bold tracking-wide mb-2">PHAN HONG DAT</h1>
+            <div class="text-sm space-y-1">
+                <p>Address: Bong Mac, Lien Mac, Me Linh, Ha Noi</p>
+                <p>Phone: 0369230426 | Email: dathip04@gmail.com</p>
+                <p>LinkedIn: https://www.linkedin.com/in/kl3init/ | GitHub: https://github.com/kl3inIT</p>
+            </div>
+        </header>
+
+        <!-- Objective/Summary -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">OBJECTIVE</h2>
+            <p class="text-sm leading-relaxed">
+                Dedicated software engineering student with strong expertise in Java development and backend technologies. Proficient in Java frameworks including Spring and Hibernate, database management, and software engineering principles. Seeking opportunities to contribute as a Java developer and continue advancing backend development skills.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">EDUCATION</h2>
+            <div class="space-y-3">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm">FPT University</h3>
+                            <p class="text-sm">Software Engineering - Bachelor's Degree</p>
+                            <p class="text-sm">GPA: 8.2/10</p>
+                        </div>
+                        <div class="text-right text-sm">
+                            <p>Ha Noi, Vietnam</p>
+                            <p>September 2022 - December 2026</p>
+                        </div>
+                    </div>
+                    <ul class="text-sm mt-2 ml-4 list-disc">
+                        <li>Relevant Coursework: Object-Oriented Programming, Data Structures & Algorithms, Java Web Application Development, Discrete Mathematics, Database Management, Software Engineering, Application Development Project, Software Requirements, Software Testing, Hibernate and Spring Framework</li>
+                        <li>Current Status: Third-year student with strong academic performance (GPA: 8.2/10)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic & Technical Experience -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">ACADEMIC & TECHNICAL EXPERIENCE</h2>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm">[Internship/Part-time Developer]</h3>
+                            <p class="text-sm italic">[Company Name - if any]</p>
+                        </div>
+                        <div class="text-right text-sm">
+                            <p>Ha Noi, Vietnam</p>
+                            <p>[Time Period]</p>
+                        </div>
+                    </div>
+                    <ul class="text-sm mt-2 ml-4 list-disc">
+                        <li>[If you have any internship, freelance work, or part-time coding jobs]</li>
+                        <li>[Technologies used and responsibilities]</li>
+                        <li>[Learning outcomes and achievements]</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-bold text-sm">Academic Team Projects & Assignments</h3>
+                            <p class="text-sm italic">FPT University</p>
+                        </div>
+                        <div class="text-right text-sm">
+                            <p>Ha Noi, Vietnam</p>
+                            <p>2022 - Present</p>
+                        </div>
+                    </div>
+                    <ul class="text-sm mt-2 ml-4 list-disc">
+                        <li>Collaborated on multiple software development projects using Java, Spring Framework, and database technologies</li>
+                        <li>Participated in Application Development Project course with real-world software engineering practices</li>
+                        <li>Applied software testing methodologies and requirements analysis in academic projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">PROJECTS</h2>
+            <div class="space-y-3">
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-sm">Course Hub (Full-stack Learning Platform)</h3>
+                        <p class="text-sm">2024</p>
+                    </div>
+                    <ul class="text-sm mt-1 ml-4 list-disc">
+                        <li>Developed a comprehensive learning management system with React TypeScript frontend and Java Spring Boot backend</li>
+                        <li>Implemented user authentication, course management, and progress tracking features</li>
+                        <li>Integrated modern UI/UX design with responsive layout for optimal user experience</li>
+                        <li>Links: <a href="https://github.com/kl3inIT/course-hub-frontend" class="text-blue-600">Frontend</a> | <a href="https://github.com/kl3inIT/coursehub-backend" class="text-blue-600">Backend</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-sm">House Rental System</h3>
+                        <p class="text-sm">2024</p>
+                    </div>
+                    <ul class="text-sm mt-1 ml-4 list-disc">
+                        <li>Built a web-based rental management system using HTML, CSS, and JavaScript</li>
+                        <li>Designed user-friendly interface for property listing and rental management</li>
+                        <li>Implemented responsive design for cross-platform compatibility</li>
+                        <li>Link: <a href="https://github.com/kl3inIT/House-Rental-System" class="text-blue-600">GitHub Repository</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-sm">LAB211 - Java Programming Labs</h3>
+                        <p class="text-sm">2024</p>
+                    </div>
+                    <ul class="text-sm mt-1 ml-4 list-disc">
+                        <li>Completed comprehensive Java programming exercises and assignments</li>
+                        <li>Demonstrated proficiency in object-oriented programming concepts and data structures</li>
+                        <li>Applied best practices in Java development and code optimization</li>
+                        <li>Link: <a href="https://github.com/kl3inIT/LAB211" class="text-blue-600">GitHub Repository</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-sm">[Personal Java Project]</h3>
+                        <p class="text-sm">2024</p>
+                    </div>
+                    <ul class="text-sm mt-1 ml-4 list-disc">
+                        <li>[Create a personal project using Spring Boot - API, CRUD operations]</li>
+                        <li>[Use MySQL/PostgreSQL for database management]</li>
+                        <li>[Implement RESTful APIs and proper error handling]</li>
+                        <li>Link: [GitHub Repository when completed]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">SKILLS</h2>
+            <div class="text-sm space-y-2">
+                <div>
+                    <span class="font-bold">Programming Languages:</span> 
+                    Java, JavaScript, TypeScript, HTML5, CSS3
+                </div>
+                <div>
+                    <span class="font-bold">Frameworks & Technologies:</span> 
+                    React, Redux, Spring Framework, Tailwind CSS
+                </div>
+                <div>
+                    <span class="font-bold">Databases:</span> 
+                    MySQL, PostgreSQL, Microsoft SQL Server, Redis
+                </div>
+                <div>
+                    <span class="font-bold">Tools & Platforms:</span> 
+                    Git, Docker, AWS, Jenkins, Kafka, Postman
+                </div>
+                <div>
+                    <span class="font-bold">Languages:</span> 
+                    Vietnamese (Native), English (Intermediate)
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">CERTIFICATIONS & ACHIEVEMENTS</h2>
+            <div class="text-sm space-y-1">
+                <div class="flex justify-between">
+                    <span>Strong Academic Performance (GPA: 8.2/10)</span>
+                    <span>2022-Present</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>[Oracle Java Certification - Recommended]</span>
+                    <span>[Future goal]</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>[Spring Professional Certification - Recommended]</span>
+                    <span>[Future goal]</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>[Any programming contest/hackathon participation]</span>
+                    <span>[If applicable]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Sections (Optional) -->
+        <section class="mb-6">
+            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">ADDITIONAL ACTIVITIES</h2>
+            <div class="text-sm space-y-2">
+                <div>
+                    <span class="font-bold">Volunteer Work:</span> 
+                    [Description of volunteer activities]
+                </div>
+                <div>
+                    <span class="font-bold">Interests:</span> 
+                    [Work-related interests and hobbies]
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Print styles and JavaScript -->
+    <style>
+        .no-print {
+            display: block;
+        }
+        
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            .harvard-style {
+                padding: 0.5in !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <script>
+        function exportToPDF() {
+            // Show loading message
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = '⏳ Generating PDF...';
+            button.disabled = true;
+
+            // Get the resume content
+            const element = document.getElementById('resume-content');
+            
+            // PDF options
+            const opt = {
+                margin: 0.5,
+                filename: 'PhanHongDat_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(function() {
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Show success message
+                showMessage('✅ PDF exported successfully!', 'success');
+            }).catch(function(error) {
+                // Reset button
+                button.innerHTML = originalText;
+                button.disabled = false;
+                
+                // Show error message
+                showMessage('❌ Error exporting PDF. Please try again.', 'error');
+                console.error('PDF export error:', error);
+            });
+        }
+
+        function showMessage(message, type) {
+            // Create message element
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
+            messageDiv.textContent = message;
+            
+            // Add to page
+            document.body.appendChild(messageDiv);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                document.body.removeChild(messageDiv);
+            }, 3000);
+        }
+
+        // Add keyboard shortcut for PDF export (Ctrl+E)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'e') {
+                e.preventDefault();
+                exportToPDF();
+            }
+        });
+    </script>
+</body>
+</html> 
