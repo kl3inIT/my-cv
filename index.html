@@ -6,104 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phan Hong Dat - Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap');
-
         body {
-            font-family: 'Times New Roman', serif;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            margin: 0;
+            background: #f3f4f6;
         }
-
         .harvard-style {
             max-width: 8.5in;
             margin: 0 auto;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 0.75in 0.75in 0.5in 0.75in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 0.25in 0.5in 0.5in 0.5in;
+            font-size: 11pt;
+            line-height: 1.3;
         }
-
+        .harvard-style h1 {
+            font-size: 15pt;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        .harvard-style h2 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 0.5em;
+            margin-bottom: 0.15em;
+        }
+        .harvard-style h3 {
+            font-size: 11pt;
+            font-weight: bold;
+        }
+        .section {
+            page-break-inside: avoid;
+            break-inside: avoid;
+            margin-bottom: 0.5em;
+        }
         @media print {
             body {
                 background: white !important;
-                padding: 0 !important;
                 margin: 0 !important;
             }
-            
             .harvard-style {
                 box-shadow: none;
                 max-width: none;
                 margin: 0 !important;
-                padding: 0.5in !important;
+                padding: 0.25in 0.5in 0.5in 0.5in !important;
             }
-            
-            .no-print {
-                display: none !important;
-            }
-            
-            /* Ensure proper page breaks */
             .section {
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
-            
-            h1, h2, h3 {
-                page-break-after: avoid;
-                break-after: avoid;
-            }
-        }
-        
-        /* PDF Export specific styles */
-        .pdf-export {
-            margin: 0 !important;
-            padding: 0.5in !important;
-            box-shadow: none !important;
         }
     </style>
 </head>
 
 <body class="bg-gray-100 p-4">
     <!-- Export to PDF Button -->
-    <div class="max-w-4xl mx-auto mb-4 no-print">
-        <button onclick="exportToPDF()"
-            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-            📄 Export to PDF
-        </button>
-        <button onclick="window.print()"
-            class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105 ml-2">
-            🖨️ Print Resume
-        </button>
-    </div>
+    <!-- Đã loại bỏ nút Export PDF và Print Resume vì chỉ dùng xuất PDF bằng Puppeteer -->
 
     <div id="resume-content" class="harvard-style">
         <!-- Header with name and contact information -->
-        <header class="text-center border-b-2 border-black pb-4 mb-6">
-            <h1 class="text-3xl font-bold tracking-wide mb-2">PHAN HONG DAT</h1>
-            <div class="text-sm space-y-1">
-                <p class="text-center">Phone: 0369230426 | Email: dathip04@gmail.com</p>
+        <header class="text-center border-b-2 border-black pb-1.5 mb-2">
+            <h1 class="text-3xl font-bold tracking-wide mb-0.5" style="letter-spacing:0.05em;">PHAN HONG DAT</h1>
+            <div class="text-sm space-y-0">
                 <p class="text-center">
-                    LinkedIn: <a href="https://www.linkedin.com/in/kl3init/"
-                        class="text-blue-600 underline hover:text-blue-800">kl3init</a> |
-                    GitHub: <a href="https://github.com/kl3inIT"
-                        class="text-blue-600 underline hover:text-blue-800">kl3inIT</a>
+                    Phone: <a href="tel:0369230426" class="hover:underline">0369230426</a> |
+                    Email: <a href="mailto:dathip04@gmail.com" class="hover:underline">dathip04@gmail.com</a>
+                </p>
+                <p class="text-center">
+                    LinkedIn: <a href="https://www.linkedin.com/in/kl3init/" class="text-blue-700 hover:underline">kl3init</a> |
+                    GitHub: <a href="https://github.com/kl3inIT" class="text-blue-700 hover:underline">kl3inIT</a>
                 </p>
             </div>
         </header>
 
         <!-- Objective/Summary -->
-        <section class="mb-6">
-            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">OBJECTIVE</h2>
-            <p class="text-sm leading-relaxed">
-                Dedicated software engineering student with strong expertise in Java development and backend
-                technologies. Proficient in Java frameworks including Spring and Hibernate, database management, and
-                software engineering principles. Seeking opportunities to contribute as a Java developer and continue
-                advancing backend development skills.
+        <section class="mb-2 section">
+            <h2 class="text-lg font-bold mb-1.5 border-b border-gray-400">OBJECTIVE</h2>
+            <p class="text-sm leading-tight">
+                Software engineering student with hands-on experience in Java backend development using Spring Boot, REST APIs, and cloud deployment. Eager to contribute to scalable backend systems and improve backend engineering skills.
             </p>
         </section>
 
         <!-- Education -->
-        <section class="mb-6">
-            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">EDUCATION</h2>
-            <div class="space-y-3">
+        <section class="mb-2 section">
+            <h2 class="text-lg font-bold mb-1.5 border-b border-gray-400">EDUCATION</h2>
+            <div class="space-y-2">
                 <div>
                     <div class="flex justify-between items-start">
                         <div>
@@ -116,47 +105,43 @@
                             <p>September 2022 - December 2026</p>
                         </div>
                     </div>
-                    <ul class="text-sm mt-2 ml-4 list-disc">
+                    <ul class="text-sm mt-1 ml-4 list-disc">
                         <li>Relevant Coursework: Object-Oriented Programming, Data Structures & Algorithms, Java Web
-                            Application Development, Discrete Mathematics, Database Management, Software Engineering,
-                            Application Development Project, Software Requirements, Software Testing, Hibernate and
+                            Application Development, Discrete Mathematics, Database Management, 
+                            Software Requirements, Software Testing, Hibernate and
                             Spring Framework</li>
-                        <li>Current Status: Third-year student with strong academic performance (GPA: 8.2/10)</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- Projects -->
-        <section class="mb-6">
-            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">PROJECTS</h2>
-            <div class="mb-6">
-                <div class="flex justify-between items-baseline mb-2">
+        <section class="mb-2 section">
+            <h2 class="text-lg font-bold mb-1.5 border-b border-gray-400">PROJECTS</h2>
+            <div class="mb-2">
+                <div class="flex justify-between items-baseline mb-1">
                     <h3 class="font-bold text-base">
                         CourseHub - Learning Management System (Team Project)
                     </h3>
-                    <span class="text-sm text-gray-600">May 2025 - Present</span>
+                    <span class="text-sm">May 2025 - Present</span>
                 </div>
-                <div class="mt-2">
-                    <p class="font-bold text-sm">Tech Stack:</p>
-                    <p class="text-sm"><span class="font-semibold">Frontend:</span> Next.js, TypeScript, Tailwind CSS, Shadcn UI (Radix UI + Tailwind), Axios, Vercel</p>
-                    <p class="text-sm"><span class="font-semibold">Backend:</span> Spring Boot, MySQL, Redis, AWS S3, WebSocket, Docker (Docker Compose), Nginx, AWS EC2</p>
+                <div class="mt-1.5">
+                    <p class="text-sm"><span class="font-bold">Frontend:</span> Next.js, TypeScript, Tailwind CSS, Shadcn UI (Radix UI + Tailwind), Axios, Vercel</p>
+                    <p class="text-sm"><span class="font-bold">Backend:</span> Spring Boot, MySQL, Redis, AWS S3, WebSocket, Docker (Docker Compose), Nginx, AWS EC2</p>
                 </div>
-                <div class="mt-2 ml-4">
+                <div class="mt-1.5 ml-4">
                     <p class="font-bold text-sm">My Responsibilities:</p>
-                    <ul class="list-disc ml-6 text-sm space-y-1">
+                    <ul class="list-disc ml-6 text-sm space-y-0.5">
                         <li>Designed and implemented RESTful APIs with Spring Boot</li>
                         <li>Integrated AWS S3 for media storage and retrieval</li>
                         <li>Developed course management, modular content (modules/lessons with video uploads), and
                             student enrollment with progress tracking</li>
-                        <li>Set up Dockerized deployment with Nginx reverse proxy, deployed backend on AWS EC2</li>
+                        <li>Set up Dockerized deployment with Nginx reverse proxy on AWS EC2 and CI/CD pipeline with GitHub Actions</li>
                         <li>Deployed frontend on Vercel with environment-based configuration</li>
-                        <li>Implemented CI/CD pipeline with GitHub Actions for automated testing and deployment</li>
-                        <li>Built and managed database schema with MySQL and Redis</li>
                         <li>Collaborated on feature design, documentation, and code review</li>
                     </ul>
                 </div>
-                <div class="mt-2">
+                <div class="mt-1.5">
                     <p class="font-bold text-sm">Links:
                         <a href="https://it4beginner.vercel.app/"
                             class="text-blue-600 underline hover:text-blue-800 ml-1">Live Demo</a> |
@@ -168,28 +153,25 @@
                 </div>
             </div>
             
-            <div class="mb-6">
-                <div class="flex justify-between items-baseline mb-2">
+            <div class="mb-2">
+                <div class="flex justify-between items-baseline mb-1">
                     <h3 class="font-bold text-base">
                         Golden Finger - E-Commerce Platform (Team Project)
                     </h3>
-                    <span class="text-sm text-gray-600">February 2025 - March 2025</span>
+                    <span class="text-sm">February 2025 - March 2025</span>
                 </div>
-                <div class="mt-2">
-                    <p class="font-bold text-sm">Tech Stack:</p>
-                    <p class="text-sm">Jakarta EE, Java Servlets, JSP, SQL Server, JavaScript, Tailwind CSS, jQuery, VNPay Payment Gateway</p>
+                <div class="mt-1.5">
+                    <p class="text-sm"><span class="font-bold">Tech Stack:</span> Jakarta EE, Java Servlets, JSP, SQL Server, JavaScript, Tailwind CSS, jQuery, VNPay Payment Gateway</p>
                 </div>
-                <div class="mt-2 ml-4">
+                <div class="mt-1.5 ml-4">
                     <p class="font-bold text-sm">My Responsibilities:</p>
-                    <ul class="list-disc ml-6 text-sm space-y-1">
+                    <ul class="list-disc ml-6 text-sm space-y-0.5">
                         <li>Implemented CRUD operations for product management with SQL Server database integration</li>
                         <li>Integrated VNPay payment gateway API for secure online transaction processing</li>
                         <li>Used SHA algorithm for secure password encryption and user authentication</li>
-                        <li>Implemented ApexCharts data visualization for admin dashboard with sales analytics and
-                            revenue tracking</li>
                     </ul>
                 </div>
-                <div class="mt-2">
+                <div class="mt-1.5">
                     <p class="font-bold text-sm">Link:
                         <a href="https://github.com/kl3inIT/Golden-Finger"
                             class="text-blue-600 underline hover:text-blue-800 ml-1">GitHub Repository</a>
@@ -199,9 +181,9 @@
         </section>
 
         <!-- Skills -->
-        <section class="mb-6">
-            <h2 class="text-lg font-bold mb-2 border-b border-gray-400">SKILLS</h2>
-            <div class="text-sm space-y-2">
+        <section class="mb-2 section">
+            <h2 class="text-lg font-bold mb-1.5 border-b border-gray-400">SKILLS</h2>
+            <div class="text-sm space-y-1">
                 <div>
                     <span class="font-bold">Programming Languages:</span>
                     Java, JavaScript(Basic), TypeScript(Basic), HTML5, CSS3
@@ -211,16 +193,12 @@
                     Spring Boot, Spring MVC, Spring Data JPA, Hibernate ORM, Java Servlets, JSP, Thymeleaf
                 </div>
                 <div>
-                    <span class="font-bold">Web Technologies:</span>
-                    React (Basic), Bootstrap
-                </div>
-                <div>
                     <span class="font-bold">Databases:</span>
                     MySQL, Microsoft SQL Server, Redis
                 </div>
                 <div>
                     <span class="font-bold">Tools & Platforms:</span>
-                    Git, GitHub Actions (CI/CD), Docker (Docker Compose), SonarQube (Code Quality), AWS (S3, EC2 - Basic), Swagger, Postman
+                    Git, GitHub Actions (CI/CD), Docker (Docker Compose), SonarQube, AWS (S3, EC2), Swagger, Postman, Maven
                 </div>
                 <div>
                     <span class="font-bold">Languages:</span>
@@ -278,10 +256,12 @@
             body {
                 background: white !important;
                 padding: 0 !important;
+                font-size: 11pt !important;
             }
 
             .harvard-style {
-                padding: 0.5in !important;
+                padding: 0.25in 0.5in 0.5in 0.5in !important;
+                font-size: 11pt !important;
             }
 
             .no-print {
@@ -289,122 +269,7 @@
             }
         }
     </style>
-
-    <script>
-        function exportToPDF() {
-            // Show loading message
-            const button = event.target;
-            const originalText = button.innerHTML;
-            button.innerHTML = '⏳ Generating PDF...';
-            button.disabled = true;
-
-            // Get the resume content
-            const element = document.getElementById('resume-content');
-            
-            // Add PDF export class temporarily
-            element.classList.add('pdf-export');
-
-            // CV-optimized PDF options
-            const opt = {
-                margin: [0.4, 0.4, 0.4, 0.4], // Minimal margins for CV
-                filename: 'PhanHongDat_Resume.pdf',
-                image: { 
-                    type: 'jpeg', 
-                    quality: 1.0 // Highest quality for text readability
-                },
-                html2canvas: {
-                    scale: 3, // Higher scale for crisp text
-                    useCORS: true,
-                    letterRendering: true,
-                    allowTaint: false,
-                    backgroundColor: '#ffffff',
-                    removeContainer: true,
-                    imageTimeout: 0,
-                    logging: false
-                },
-                jsPDF: {
-                    unit: 'in',
-                    format: 'a4',
-                    orientation: 'portrait',
-                    compress: true,
-                    precision: 16
-                },
-                pagebreak: {
-                    mode: ['avoid-all', 'css', 'legacy'],
-                    before: '.section',
-                    after: '.section',
-                    avoid: 'h1, h2, h3'
-                }
-            };
-
-            // Generate PDF with optimized settings
-            html2pdf().set(opt).from(element).save().then(function () {
-                // Remove PDF export class
-                element.classList.remove('pdf-export');
-                
-                // Reset button
-                button.innerHTML = originalText;
-                button.disabled = false;
-
-                // Show success message
-                showMessage('✅ Professional CV PDF exported successfully!', 'success');
-            }).catch(function (error) {
-                // Remove PDF export class
-                element.classList.remove('pdf-export');
-                
-                // Reset button
-                button.innerHTML = originalText;
-                button.disabled = false;
-
-                // Show error message
-                showMessage('❌ Error exporting PDF. Please try again.', 'error');
-                console.error('PDF export error:', error);
-            });
-        }
-
-        function showMessage(message, type) {
-            // Create message element
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transition-all duration-300 ${
-                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-            }`;
-            messageDiv.textContent = message;
-
-            // Add to page
-            document.body.appendChild(messageDiv);
-
-            // Remove after 4 seconds with fade out
-            setTimeout(() => {
-                messageDiv.style.opacity = '0';
-                setTimeout(() => {
-                    if (messageDiv.parentNode) {
-                        document.body.removeChild(messageDiv);
-                    }
-                }, 300);
-            }, 4000);
-        }
-
-        // Add keyboard shortcuts
-        document.addEventListener('keydown', function (e) {
-            if (e.ctrlKey && e.key === 'e') {
-                e.preventDefault();
-                exportToPDF();
-            }
-            if (e.ctrlKey && e.key === 'p') {
-                e.preventDefault();
-                window.print();
-            }
-        });
-
-        // Optimize for print
-        window.addEventListener('beforeprint', function() {
-            document.body.classList.add('printing');
-        });
-
-        window.addEventListener('afterprint', function() {
-            document.body.classList.remove('printing');
-        });
-    </script>
+    <!-- Đã loại bỏ script my-cv.js, chỉ sử dụng xuất PDF bằng Puppeteer Node.js -->
 </body>
 
 </html>
