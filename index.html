@@ -19,13 +19,44 @@
             margin: 0 auto;
             background: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 0.75in 0.75in 0.5in 0.75in;
         }
 
         @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            
             .harvard-style {
                 box-shadow: none;
                 max-width: none;
+                margin: 0 !important;
+                padding: 0.5in !important;
             }
+            
+            .no-print {
+                display: none !important;
+            }
+            
+            /* Ensure proper page breaks */
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            h1, h2, h3 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+        }
+        
+        /* PDF Export specific styles */
+        .pdf-export {
+            margin: 0 !important;
+            padding: 0.5in !important;
+            box-shadow: none !important;
         }
     </style>
 </head>
@@ -43,7 +74,7 @@
         </button>
     </div>
 
-    <div id="resume-content" class="harvard-style p-8">
+    <div id="resume-content" class="harvard-style">
         <!-- Header with name and contact information -->
         <header class="text-center border-b-2 border-black pb-4 mb-6">
             <h1 class="text-3xl font-bold tracking-wide mb-2">PHAN HONG DAT</h1>
@@ -51,9 +82,9 @@
                 <p class="text-center">Phone: 0369230426 | Email: dathip04@gmail.com</p>
                 <p class="text-center">
                     LinkedIn: <a href="https://www.linkedin.com/in/kl3init/"
-                        style="color: #1a0dab; text-decoration: underline;">kl3init</a> |
+                        class="text-blue-600 underline hover:text-blue-800">kl3init</a> |
                     GitHub: <a href="https://github.com/kl3inIT"
-                        style="color: #1a0dab; text-decoration: underline;">kl3inIT</a>
+                        class="text-blue-600 underline hover:text-blue-800">kl3inIT</a>
                 </p>
             </div>
         </header>
@@ -99,23 +130,21 @@
         <!-- Projects -->
         <section class="mb-6">
             <h2 class="text-lg font-bold mb-2 border-b border-gray-400">PROJECTS</h2>
-            <div style="margin-bottom: 1.5em;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-weight: bold; font-size: 1.1em;">
+            <div class="mb-6">
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-bold text-base">
                         CourseHub - Learning Management System (Team Project)
-                    </span>
-                    <span style="font-size: 0.95em;">May 2025 - Present</span>
+                    </h3>
+                    <span class="text-sm text-gray-600">May 2025 - Present</span>
                 </div>
-                <div style="margin-top: 0.5em;">
-                    <span style="font-weight: bold;">Tech Stack:</span><br>
-                    <span><b>Frontend:</b> Next.js, TypeScript, Tailwind CSS, Shadcn UI (Radix UI + Tailwind), Axios,
-                        Vercel</span><br>
-                    <span><b>Backend:</b> Spring Boot, MySQL, Redis, AWS S3, WebSocket, Docker (Docker Compose), Nginx, AWS
-                        EC2</span>
+                <div class="mt-2">
+                    <p class="font-bold text-sm">Tech Stack:</p>
+                    <p class="text-sm"><span class="font-semibold">Frontend:</span> Next.js, TypeScript, Tailwind CSS, Shadcn UI (Radix UI + Tailwind), Axios, Vercel</p>
+                    <p class="text-sm"><span class="font-semibold">Backend:</span> Spring Boot, MySQL, Redis, AWS S3, WebSocket, Docker (Docker Compose), Nginx, AWS EC2</p>
                 </div>
                 <div class="mt-2 ml-4">
-                    <span class="font-bold">My Responsibilities:</span>
-                    <ul class="list-disc ml-6 text-sm">
+                    <p class="font-bold text-sm">My Responsibilities:</p>
+                    <ul class="list-disc ml-6 text-sm space-y-1">
                         <li>Designed and implemented RESTful APIs with Spring Boot</li>
                         <li>Integrated AWS S3 for media storage and retrieval</li>
                         <li>Developed course management, modular content (modules/lessons with video uploads), and
@@ -127,32 +156,32 @@
                         <li>Collaborated on feature design, documentation, and code review</li>
                     </ul>
                 </div>
-                <div style="margin-top: 0.5em;">
-                    <span style="font-weight: bold;">Links:</span>
-                    <span>
+                <div class="mt-2">
+                    <p class="font-bold text-sm">Links:
                         <a href="https://it4beginner.vercel.app/"
-                            style="color: #1a0dab; text-decoration: underline;">Live Demo</a> |
+                            class="text-blue-600 underline hover:text-blue-800 ml-1">Live Demo</a> |
                         <a href="https://github.com/kl3inIT/course-hub-frontend"
-                            style="color: #1a0dab; text-decoration: underline;">Frontend</a> |
+                            class="text-blue-600 underline hover:text-blue-800 ml-1">Frontend</a> |
                         <a href="https://github.com/kl3inIT/coursehub-backend"
-                            style="color: #1a0dab; text-decoration: underline;">Backend</a>
-                    </span>
+                            class="text-blue-600 underline hover:text-blue-800 ml-1">Backend</a>
+                    </p>
                 </div>
             </div>
-            <div style="margin-bottom: 1.5em;">
-                <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                    <span style="font-weight: bold; font-size: 1.1em;">
+            
+            <div class="mb-6">
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-bold text-base">
                         Golden Finger - E-Commerce Platform (Team Project)
-                    </span>
-                    <span style="font-size: 0.95em;">February 2025 - March 2025</span>
+                    </h3>
+                    <span class="text-sm text-gray-600">February 2025 - March 2025</span>
                 </div>
-                <div style="margin-top: 0.5em;">
-                    <span style="font-weight: bold;">Tech Stack:</span> Jakarta EE, Java Servlets, JSP, SQL Server,
-                    JavaScript, Tailwind CSS, jQuery, VNPay Payment Gateway<br>
+                <div class="mt-2">
+                    <p class="font-bold text-sm">Tech Stack:</p>
+                    <p class="text-sm">Jakarta EE, Java Servlets, JSP, SQL Server, JavaScript, Tailwind CSS, jQuery, VNPay Payment Gateway</p>
                 </div>
                 <div class="mt-2 ml-4">
-                    <span class="font-bold">My Responsibilities:</span>
-                    <ul class="list-disc ml-6 text-sm">
+                    <p class="font-bold text-sm">My Responsibilities:</p>
+                    <ul class="list-disc ml-6 text-sm space-y-1">
                         <li>Implemented CRUD operations for product management with SQL Server database integration</li>
                         <li>Integrated VNPay payment gateway API for secure online transaction processing</li>
                         <li>Used SHA algorithm for secure password encryption and user authentication</li>
@@ -160,12 +189,11 @@
                             revenue tracking</li>
                     </ul>
                 </div>
-                <div style="margin-top: 0.5em;">
-                    <span style="font-weight: bold;">Link:</span>
-                    <span>
+                <div class="mt-2">
+                    <p class="font-bold text-sm">Link:
                         <a href="https://github.com/kl3inIT/Golden-Finger"
-                            style="color: #1a0dab; text-decoration: underline;">GitHub Repository</a>
-                    </span>
+                            class="text-blue-600 underline hover:text-blue-800 ml-1">GitHub Repository</a>
+                    </p>
                 </div>
             </div>
         </section>
@@ -272,33 +300,58 @@
 
             // Get the resume content
             const element = document.getElementById('resume-content');
+            
+            // Add PDF export class temporarily
+            element.classList.add('pdf-export');
 
-            // PDF options
+            // CV-optimized PDF options
             const opt = {
-                margin: 0.5,
+                margin: [0.4, 0.4, 0.4, 0.4], // Minimal margins for CV
                 filename: 'PhanHongDat_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { 
+                    type: 'jpeg', 
+                    quality: 1.0 // Highest quality for text readability
+                },
                 html2canvas: {
-                    scale: 2,
+                    scale: 3, // Higher scale for crisp text
                     useCORS: true,
-                    letterRendering: true
+                    letterRendering: true,
+                    allowTaint: false,
+                    backgroundColor: '#ffffff',
+                    removeContainer: true,
+                    imageTimeout: 0,
+                    logging: false
                 },
                 jsPDF: {
                     unit: 'in',
                     format: 'a4',
-                    orientation: 'portrait'
+                    orientation: 'portrait',
+                    compress: true,
+                    precision: 16
+                },
+                pagebreak: {
+                    mode: ['avoid-all', 'css', 'legacy'],
+                    before: '.section',
+                    after: '.section',
+                    avoid: 'h1, h2, h3'
                 }
             };
 
-            // Generate PDF
+            // Generate PDF with optimized settings
             html2pdf().set(opt).from(element).save().then(function () {
+                // Remove PDF export class
+                element.classList.remove('pdf-export');
+                
                 // Reset button
                 button.innerHTML = originalText;
                 button.disabled = false;
 
                 // Show success message
-                showMessage('✅ PDF exported successfully!', 'success');
+                showMessage('✅ Professional CV PDF exported successfully!', 'success');
             }).catch(function (error) {
+                // Remove PDF export class
+                element.classList.remove('pdf-export');
+                
                 // Reset button
                 button.innerHTML = originalText;
                 button.disabled = false;
@@ -312,25 +365,44 @@
         function showMessage(message, type) {
             // Create message element
             const messageDiv = document.createElement('div');
-            messageDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-                }`;
+            messageDiv.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 transition-all duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
             messageDiv.textContent = message;
 
             // Add to page
             document.body.appendChild(messageDiv);
 
-            // Remove after 3 seconds
+            // Remove after 4 seconds with fade out
             setTimeout(() => {
-                document.body.removeChild(messageDiv);
-            }, 3000);
+                messageDiv.style.opacity = '0';
+                setTimeout(() => {
+                    if (messageDiv.parentNode) {
+                        document.body.removeChild(messageDiv);
+                    }
+                }, 300);
+            }, 4000);
         }
 
-        // Add keyboard shortcut for PDF export (Ctrl+E)
+        // Add keyboard shortcuts
         document.addEventListener('keydown', function (e) {
             if (e.ctrlKey && e.key === 'e') {
                 e.preventDefault();
                 exportToPDF();
             }
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+
+        // Optimize for print
+        window.addEventListener('beforeprint', function() {
+            document.body.classList.add('printing');
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.classList.remove('printing');
         });
     </script>
 </body>
